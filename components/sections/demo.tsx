@@ -19,14 +19,16 @@ export function Demo() {
     e.preventDefault()
     if (!input.trim()) return
 
-    const newMessages = [
+    // Define newMessages as an array of Message
+    const newMessages: Message[] = [
       ...messages,
       { role: "user", content: input },
-      { 
-        role: "assistant", 
-        content: "Here's a summary of the latest trends based on your query. [Demo response - In production, this would be real AI-generated content]" 
+      {
+        role: "assistant",
+        content: "Here's a summary of the latest trends based on your query. [Demo response - In production, this would be real AI-generated content]"
       }
     ]
+
     setMessages(newMessages)
     setInput("")
   }
