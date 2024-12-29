@@ -1,0 +1,62 @@
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.dnaStrand {
+  animation: rotate 3s linear infinite;
+}
+
+.nucleotide {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loadingContainer {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent; /* Use transparent or inherit */
+  z-index: 50;
+}
+
+.loadingContent {
+  position: relative;
+}
+
+.loadingBackground {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  background: transparent; /* Remove any background effect */
+}
+
+.dnaContainer {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingText {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2563EB;
+  text-align: center;
+}
